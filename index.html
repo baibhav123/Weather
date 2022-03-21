@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Weather App</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/css/splide.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.9/dist/js/splide.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Weather App</h1>
+		<div class="search">
+			<input type="text" placeholder="Search city, country">
+			<button>Search</button>
+		</div>
+		<div class="report">
+			<div class="report-preloader">
+				<div>No report to show</div>
+			</div>
+			<div class="section-1">
+				<div class="left">
+					<div class="condtion-icon">
+						<div class="icon"></div>
+						<div class="icon-text"></div>
+					</div>
+					<div class="current-temp">
+						<div class="temp">-</div>
+						<div class="low-heigh-temp">
+							<span class="low-temp">
+								<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="15px"
+									viewBox="0 0 24 24" width="15px" fill="#000000">
+									<rect fill="none" height="24" width="24" />
+									<path d="M19,15l-1.41-1.41L13,18.17V2H11v16.17l-4.59-4.59L5,15l7,7L19,15z" />
+								</svg>
+								<span>-</span>
+							</span>
+							<span class="heigh-temp">
+								<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="15px"
+									viewBox="0 0 24 24" width="15px" fill="#000000">
+									<rect fill="none" height="24" width="24" />
+									<path d="M5,9l1.41,1.41L11,5.83V22H13V5.83l4.59,4.59L19,9l-7-7L5,9z" />
+								</svg>
+								<span>-</span>
+							</span>
+						</div>
+					</div>
+					<div class="current-atmos">
+						<ul>
+							<li class="precipitation">Precipitation <span>-</span></li>
+							<li class="humidity">Humidity <span>-</span></li>
+							<li class="pressure">Pressure <span>-</span></li>
+							<li class="wind">Wind <span>-</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="right">
+					<ul>
+						<li class="location">Location <span>-</span></li>
+						<li class="suntime">Suntime <span>-</span></li>
+						<li class="long">Longitude <span>-</span></li>
+						<li class="lat">Latitude <span>-</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="section-2">
+				<div class="title">120 Hour Forcast</div>
+				<div class="forcast-120">
+					<div class="splide__track">
+						<ul class="splide__list" id="forcast-120H">
+							<li class="splide__slide">
+								<div class="short-weather">
+									<div class="s-icon"><img src="images/'+data.data[i].weather.icon+'.png"
+											title="'+data.data[i].weather.description+'"></div>
+									<div class="s-detail"><span class="s-temperature"><img src="images/temperature.png"
+												alt=""><span>'+data.data[i].temp+'&#176;C</span></span><span
+											class="s-precipitation"><img src="images/rain.png"
+												alt=""><span>'+Math.round(data.data[i].precip * 10)/10+'%</span></span>
+									</div>
+									<div class="s-time">'+formatedDate+'</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="section-3">
+				<div class="title">16 Days Forcast</div>
+				<div class="forcast-16d">
+					<div class="splide__track">
+						<ul class="splide__list" id="forcast-16D">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
